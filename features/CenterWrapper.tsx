@@ -3,9 +3,10 @@ import React, { PropsWithChildren, ReactComponentElement } from 'react'
 interface Props {
 	children: any
 	bg?: any
+	props?: any
 }
 
-const CenterWrapper: React.FC<Props> = ({ children, bg }) => {
+const CenterWrapper: React.FC<Props> = ({ children, bg, props }) => {
 	const col = bg ? bg : '#aca5ae'
 	return (
 		<VStack
@@ -16,6 +17,7 @@ const CenterWrapper: React.FC<Props> = ({ children, bg }) => {
 			justifyItems={'center'}
 			alignContent={'center'}
 			justifyContent={'center'}
+			{...props}
 		>
 			{children}
 		</VStack>

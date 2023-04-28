@@ -1,27 +1,55 @@
-import { VStack, Text, Spacer, Heading, Box } from 'native-base'
+import {
+	CheckIcon,
+	CircleIcon,
+	HStack,
+	Heading,
+	Icon,
+	IconButton,
+	InfoIcon,
+	Input,
+	PlayIcon,
+	QuestionIcon,
+	Spacer,
+	Spinner,
+	ThreeDotsIcon,
+	VStack,
+} from 'native-base'
 import React from 'react'
-import CenterWrapper from '../features/CenterWrapper'
+import { SafeAreaView } from 'react-native'
 
 export default function Home() {
 	const headingProps = {
-		fontSize: '8xl',
-		fontFamily: 'heading',
-		color: '#2a2c31',
+		fontSize: '6xl',
+		color: 'gray.900',
+		pb: 2,
 	}
-	const bodyProps = {
-		fontSize: '2xl',
-		fontFamily: 'bodyBold',
-		color: '#2a2c31',
-	}
+
 	return (
-		<CenterWrapper>
-			<Heading {...headingProps}>66</Heading>
-			<Heading {...headingProps} mt={-6}>
-				days
-			</Heading>
-			<Text pb={100} {...bodyProps}>
-				To build a habit.
-			</Text>
-		</CenterWrapper>
+		<VStack flex={1} space={8} bg={'#dad0e2'}>
+			<SafeAreaView style={{ flex: 1 }}>
+				<VStack space={4} px={8} py={70} shadow={3} bg={'transparent'}>
+					<Heading {...headingProps}>What should I call you?</Heading>
+					<Input
+						borderColor={'gray.200'}
+						color={'gray.900'}
+						borderWidth={3}
+						bgColor={'blueGray.100'}
+						p={2}
+						fontSize={'2xl'}
+						bg={'gray.100'}
+						variant='filled'
+						placeholder='hmmm ???'
+					/>
+					<HStack>
+						<Spacer />
+						<IconButton
+							bg={'gray.900'}
+							borderRadius={200}
+							icon={<CheckIcon color={'gray.200'} size={8} />}
+						/>
+					</HStack>
+				</VStack>
+			</SafeAreaView>
+		</VStack>
 	)
 }
