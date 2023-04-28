@@ -1,6 +1,7 @@
 import { Stack } from 'expo-router'
 import { StyleProvider } from '../theme/StyleProvider'
 import React, { useState, useEffect } from 'react'
+import { StatusBar } from 'expo-status-bar'
 
 import {
 	NotoSansSC_100Thin as bodyThin,
@@ -41,6 +42,7 @@ function App() {
 	} else {
 		return (
 			<StyleProvider>
+				<StatusBar style={'dark'} animated />
 				<Stack screenOptions={{ headerShown: false }} />
 			</StyleProvider>
 		)
